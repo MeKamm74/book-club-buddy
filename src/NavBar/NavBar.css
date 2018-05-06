@@ -1,0 +1,15 @@
+.nav-bar {
+	display: flex;
+	justify-content: center;
+	background-color: #222;
+	color: white;
+}
+
+.nav-bar__item {
+	text-align: center;
+	padding: 1em
+}
+
+.nav-bar__item:hover {
+	background-color: blue;
+}
