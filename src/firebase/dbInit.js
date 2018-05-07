@@ -1,6 +1,8 @@
 const firebase = require('firebase');
 require('firebase/firestore');
 
+let db;
+
 function initializeFirebaseApp() {
     firebase.initializeApp({
         apiKey: "AIzaSyCXwgdIDD3wN2hFiRdnuCc1zlbfRhHGuqQ",
@@ -11,10 +13,14 @@ function initializeFirebaseApp() {
         messagingSenderId: "217999158030",
         timestampsInSnapshots: true
       })
-    const db = firebase.firestore();
-    db.collection('users').get().then(snapshot => {
-        snapshot.forEach(doc => console.log(doc.data()));
-    })
+    db = firebase.firestore();
 }
 
-export default initializeFirebaseApp;
+function getDB() {
+    return db;
+}
+
+export default {
+    initializeFirebaseApp,
+    getDB
+};
