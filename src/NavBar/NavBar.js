@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NavBar.css';
 
-class NavBar extends Component {
-	render () {
-		return (
-			<div className="nav-bar">
-				<div className="nav-bar__item">Submit a book</div>
-				<div className="nav-bar__item">Submissions</div>
-				<div className="nav-bar__item">Rate a book</div>
-			</div>
-		);
-	}
+const NavBar = function () {
+	return (
+		<div className="nav-bar">
+			<a className="nav-bar__item">Submit a book</a>
+			<a className="nav-bar__item">Submissions</a>
+			<a className="nav-bar__item">Rate a book</a>
+		</div>
+	);
 }
 
 export default NavBar;

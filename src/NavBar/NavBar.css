@@ -1,13 +1,13 @@
 .nav-bar {
-	display: flex;
-	justify-content: center;
 	background-color: #222;
 	color: white;
+	display: flex;
+	justify-content: center;
 }
 
 .nav-bar__item {
+	padding: 1em;
 	text-align: center;
-	padding: 1em
 }
 
 .nav-bar__item:hover {
