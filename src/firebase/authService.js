@@ -13,13 +13,7 @@ const authService = function() {
             }
         })
 
-        firebase.auth().onAuthStateChanged(user => {
-            if(user) {
-                console.log(user);
-            } else {
-                console.log('no user');
-            }
-        })
+        // firebase.auth().onAuthStateChanged(user => {})
     }
 
     function getCurrentUser() {

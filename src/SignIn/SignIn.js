@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import authService from '../firebase/authService';
 
 class SignIn extends Component {
-    constructor() {
-        super();
-    }
 
     signIn() {
         authService.signIn();
@@ -15,7 +12,7 @@ class SignIn extends Component {
     }
 
     render() {
-        if(this.props.isAuthenticated){
+        if (this.props.isAuthenticated) {
             return <button onClick={this.signOut.bind(this)}>Sign Out</button>
         }
 
