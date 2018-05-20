@@ -4,17 +4,35 @@ import Header from './Header/Header.js'
 import Footer from './Footer/Footer.js'
 import './App.css';
 
+import firebase from '@firebase/app';
+import '@firebase/auth';
+
 class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <Header />
-                <NavBar />
-                <div className="main"></div>
-                <Footer />
-            </div>
-        );
-    }
+	constructor(){
+		super();
+		this.state = {
+			authenticated: false
+		};
+		this.bindAuthEvent()
+	}
+
+	bindAuthEvent(){
+		firebase.auth().onAuthStateChanged(user => {
+			const userExists = user ? true : false;
+			this.setState({authenticated: userExists});
+		})
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<Header />
+				<NavBar isAuthenticated={this.state.authenticated}/>
+				<div className="main"></div>
+				<Footer />
+			</div>
+		);
+	}
 }
 
 export default App;
