@@ -4,23 +4,25 @@ require('firebase/firestore');
 let db;
 
 function initializeFirebaseApp() {
-    firebase.initializeApp({
-        apiKey: "AIzaSyCXwgdIDD3wN2hFiRdnuCc1zlbfRhHGuqQ",
-        authDomain: "book-club-buddy-dev.firebaseapp.com",
-        databaseURL: "https://book-club-buddy-dev.firebaseio.com",
-        projectId: "book-club-buddy-dev",
-        storageBucket: "book-club-buddy-dev.appspot.com",
-        messagingSenderId: "217999158030",
-        timestampsInSnapshots: true
-      })
-    db = firebase.firestore();
+	firebase.initializeApp({
+		apiKey: 'AIzaSyCXwgdIDD3wN2hFiRdnuCc1zlbfRhHGuqQ',
+		authDomain: 'book-club-buddy-dev.firebaseapp.com',
+		databaseURL: 'https://book-club-buddy-dev.firebaseio.com',
+		projectId: 'book-club-buddy-dev',
+		storageBucket: 'book-club-buddy-dev.appspot.com',
+		messagingSenderId: '217999158030',
+		timestampsInSnapshots: true
+	});
+	db = firebase.firestore();
+	const settings = {timestampsInSnapshots: true};
+	db.settings(settings);
 }
 
 function getDB() {
-    return db;
+	return db;
 }
 
 export default {
-    initializeFirebaseApp,
-    getDB
+	initializeFirebaseApp,
+	getDB
 };
