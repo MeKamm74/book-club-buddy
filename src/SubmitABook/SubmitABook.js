@@ -6,7 +6,7 @@ const SubmitABook = function() {
 	function submitBook(e) {
 		e.preventDefault();
 		const formVals = {};
-		[...document.querySelectorAll('.input')].forEach(input => {
+		document.querySelectorAll('.input').forEach(input => {
 			formVals[input.name] = input.value;
 		});
 		bookService.submitBook(formVals);
