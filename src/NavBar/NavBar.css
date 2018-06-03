@@ -1,13 +1,14 @@
 .nav-bar {
 	background-color: #222;
-	color: white;
 	display: flex;
 	justify-content: center;
 }
 
 .nav-bar__item {
+	color: white;
 	padding: 1em;
 	text-align: center;
+	text-decoration: none;
 }
 
 .nav-bar__item:hover {
